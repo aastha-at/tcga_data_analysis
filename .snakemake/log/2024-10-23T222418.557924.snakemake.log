@@ -1,0 +1,42 @@
+host: login01
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job          count
+---------  -------
+read_data        2
+total            2
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Oct 23 22:24:18 2024]
+localrule read_data:
+    input: solid_tissue_normal.tsv
+    output: tpm_solid_tissue_normal.tsv
+    jobid: 0
+    reason: Missing output files: tpm_solid_tissue_normal.tsv
+    wildcards: sample=solid_tissue_normal
+    resources: tmpdir=/tmp
+
+[Wed Oct 23 22:24:22 2024]
+Finished job 0.
+1 of 2 steps (50%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Oct 23 22:24:22 2024]
+localrule read_data:
+    input: primary_tumor.tsv
+    output: tpm_primary_tumor.tsv
+    jobid: 2
+    reason: Missing output files: tpm_primary_tumor.tsv
+    wildcards: sample=primary_tumor
+    resources: tmpdir=/tmp
+
+[Wed Oct 23 22:24:51 2024]
+Finished job 2.
+2 of 2 steps (100%) done
+Complete log: .snakemake/log/2024-10-23T222418.557924.snakemake.log

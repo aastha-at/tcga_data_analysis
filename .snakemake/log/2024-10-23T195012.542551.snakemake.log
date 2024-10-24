@@ -1,0 +1,32 @@
+host: login01
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job              count
+-------------  -------
+read_data_pt         1
+read_data_stn        1
+total                2
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Oct 23 19:50:12 2024]
+localrule read_data_stn:
+    input: solid_tissue_normal.tsv
+    output: tpm_stn.tsv
+    jobid: 0
+    reason: Missing output files: tpm_stn.tsv
+    resources: tmpdir=/tmp
+
+Waiting at most 5 seconds for missing files.
+MissingOutputException in rule read_data_stn in file /home/bec51310.iitr/workplace/.project/tcga_data_analysis/snakemake.smk, line 29:
+Job 0 completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+tpm_stn.tsv (missing locally, parent dir not present)
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-10-23T195012.542551.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.
