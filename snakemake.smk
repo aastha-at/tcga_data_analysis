@@ -30,6 +30,6 @@ rule plot:
         tpm_stn="tpm_solid_tissue_normal.tsv",
         script="Rscript.R"
     output: 
-        "plot.pdf"
+        "plot.png"
     shell:
-        "Rscript {input.script} {output}"
+        "Rscript {input.script}"
