@@ -1,0 +1,40 @@
+host: login01
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 80
+Rules claiming more threads will be scaled down.
+Job stats:
+job      count
+-----  -------
+all          1
+plot         1
+total        2
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Nov 11 17:15:06 2024]
+localrule plot:
+    input: tpm_files/tpm_primary_tumor.tsv, tpm_files/tpm_solid_tissue_normal.tsv, scripts/Rscript.R
+    output: plot.pdf
+    jobid: 1
+    reason: Missing output files: plot.pdf
+    resources: tmpdir=/tmp
+
+[Mon Nov 11 17:15:08 2024]
+Finished job 1.
+1 of 2 steps (50%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Nov 11 17:15:08 2024]
+localrule all:
+    input: plot.pdf
+    jobid: 0
+    reason: Input files updated by another job: plot.pdf
+    resources: tmpdir=/tmp
+
+[Mon Nov 11 17:15:08 2024]
+Finished job 0.
+2 of 2 steps (100%) done
+Complete log: .snakemake/log/2024-11-11T171506.939798.snakemake.log

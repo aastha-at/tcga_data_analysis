@@ -1,0 +1,58 @@
+host: login01
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 80
+Rules claiming more threads will be scaled down.
+Job stats:
+job          count
+---------  -------
+filter           2
+plot             1
+read_data        2
+total            5
+
+Select jobs to execute...
+Execute 2 jobs...
+
+[Mon Nov 11 13:40:46 2024]
+localrule filter:
+    input: gdc_sample_sheet.tsv
+    output: sample_files/Primary Tumor.tsv
+    jobid: 2
+    reason: Missing output files: sample_files/Primary Tumor.tsv
+    wildcards: file_name=Primary Tumor
+    resources: tmpdir=/tmp
+
+
+[Mon Nov 11 13:40:46 2024]
+localrule filter:
+    input: gdc_sample_sheet.tsv
+    output: sample_files/Solid Tissue Normal.tsv
+    jobid: 4
+    reason: Missing output files: sample_files/Solid Tissue Normal.tsv
+    wildcards: file_name=Solid Tissue Normal
+    resources: tmpdir=/tmp
+
+[Mon Nov 11 13:40:46 2024]
+Error in rule filter:
+    jobid: 4
+    input: gdc_sample_sheet.tsv
+    output: sample_files/Solid Tissue Normal.tsv
+    shell:
+        grep 'None' gdc_sample_sheet.tsv > sample_files/Solid Tissue Normal.tsv
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Mon Nov 11 13:40:46 2024]
+Error in rule filter:
+    jobid: 2
+    input: gdc_sample_sheet.tsv
+    output: sample_files/Primary Tumor.tsv
+    shell:
+        grep 'None' gdc_sample_sheet.tsv > sample_files/Primary Tumor.tsv
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-11-11T134046.571157.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

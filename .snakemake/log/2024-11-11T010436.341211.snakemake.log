@@ -1,0 +1,34 @@
+host: login01
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 80
+Rules claiming more threads will be scaled down.
+Job stats:
+job              count
+-------------  -------
+filter_sample        1
+total                1
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Nov 11 01:04:36 2024]
+localrule filter_sample:
+    input: gdc_sample_sheet.tsv
+    output: primary_tumor.tsv
+    jobid: 0
+    reason: Missing output files: primary_tumor.tsv
+    wildcards: sample=primary_tumor
+    resources: tmpdir=/tmp
+
+[Mon Nov 11 01:04:37 2024]
+Error in rule filter_sample:
+    jobid: 0
+    input: gdc_sample_sheet.tsv
+    output: primary_tumor.tsv
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-11-11T010436.341211.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

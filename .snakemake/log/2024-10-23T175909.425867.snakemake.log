@@ -1,0 +1,26 @@
+host: login01
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job       count
+------  -------
+filter        1
+total         1
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Oct 23 17:59:09 2024]
+localrule filter:
+    input: gdc_sample_sheet.2024-09-27.tsv
+    output: primary_tumor.tsv, solid_tissue_normal.tsv
+    jobid: 0
+    reason: Code has changed since last execution
+    resources: tmpdir=/tmp
+
+[Wed Oct 23 17:59:09 2024]
+Finished job 0.
+1 of 1 steps (100%) done
+Complete log: .snakemake/log/2024-10-23T175909.425867.snakemake.log

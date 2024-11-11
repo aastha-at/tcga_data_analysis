@@ -1,0 +1,47 @@
+host: login01
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 80
+Rules claiming more threads will be scaled down.
+Job stats:
+job          count
+---------  -------
+plot             1
+read_data        2
+total            3
+
+Select jobs to execute...
+Execute 2 jobs...
+
+[Mon Nov 11 13:29:53 2024]
+localrule read_data:
+    input: sample_files/solid_tissue_normal.tsv
+    output: tpm_files/tpm_solid_tissue_normal.tsv
+    jobid: 3
+    reason: Missing output files: tpm_files/tpm_solid_tissue_normal.tsv
+    wildcards: file_name=solid_tissue_normal
+    resources: tmpdir=/tmp
+
+
+[Mon Nov 11 13:29:53 2024]
+localrule read_data:
+    input: sample_files/primary_tumor.tsv
+    output: tpm_files/tpm_primary_tumor.tsv
+    jobid: 1
+    reason: Missing output files: tpm_files/tpm_primary_tumor.tsv
+    wildcards: file_name=primary_tumor
+    resources: tmpdir=/tmp
+
+Waiting at most 5 seconds for missing files.
+MissingOutputException in rule read_data in file /home/bec51310.iitr/workplace/project/tcga_data_analysis/test2.smk, line 26:
+Job 3  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+tpm_files/tpm_solid_tissue_normal.tsv (missing locally, parent dir contents: )
+Waiting at most 5 seconds for missing files.
+MissingOutputException in rule read_data in file /home/bec51310.iitr/workplace/project/tcga_data_analysis/test2.smk, line 26:
+Job 1  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+tpm_files/tpm_primary_tumor.tsv (missing locally, parent dir contents: )
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-11-11T132953.934826.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

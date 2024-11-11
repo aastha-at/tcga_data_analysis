@@ -1,0 +1,7 @@
+host: login01
+Building DAG of jobs...
+MissingInputException in rule plot in file /home/bec51310.iitr/workplace/project/tcga_data_analysis/test.smk, line 43:
+Missing input files for rule plot:
+    output: plot.png
+    affected files:
+        Rscript.R

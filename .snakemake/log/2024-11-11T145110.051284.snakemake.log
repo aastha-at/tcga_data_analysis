@@ -1,0 +1,27 @@
+host: login01
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 80
+Rules claiming more threads will be scaled down.
+Job stats:
+job                    count
+-------------------  -------
+filter_sample_types        1
+total                      1
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Nov 11 14:51:10 2024]
+localrule filter_sample_types:
+    input: data/metadata.tsv
+    output: sample_files/Primary_Tumor.tsv
+    jobid: 0
+    reason: Missing output files: sample_files/Primary_Tumor.tsv
+    wildcards: sample_type=Primary_Tumor
+    resources: tmpdir=/tmp
+
+[Mon Nov 11 14:51:10 2024]
+Finished job 0.
+1 of 1 steps (100%) done
+Complete log: .snakemake/log/2024-11-11T145110.051284.snakemake.log

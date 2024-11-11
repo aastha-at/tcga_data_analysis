@@ -1,0 +1,65 @@
+host: login01
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 80
+Rules claiming more threads will be scaled down.
+Job stats:
+job          count
+---------  -------
+filter           2
+read_data        2
+total            4
+
+Select jobs to execute...
+Execute 2 jobs...
+
+[Wed Oct 23 19:29:58 2024]
+localrule filter:
+    input: gdc_sample_sheet.2024-09-27.tsv
+    output: samples/Primary_Tumor.2024-09-27.tsv
+    jobid: 1
+    reason: Missing output files: samples/Primary_Tumor.2024-09-27.tsv
+    wildcards: tissue_type=Primary_Tumor, date=2024-09-27
+    resources: tmpdir=/tmp
+
+
+[Wed Oct 23 19:29:58 2024]
+localrule filter:
+    input: gdc_sample_sheet.2024-09-27.tsv
+    output: samples/Solid_Tissue_Normal.2024-09-27.tsv
+    jobid: 3
+    reason: Missing output files: samples/Solid_Tissue_Normal.2024-09-27.tsv
+    wildcards: tissue_type=Solid_Tissue_Normal, date=2024-09-27
+    resources: tmpdir=/tmp
+
+[Wed Oct 23 19:29:58 2024]
+Error in rule filter:
+    jobid: 1
+    input: gdc_sample_sheet.2024-09-27.tsv
+    output: samples/Primary_Tumor.2024-09-27.tsv
+    shell:
+        
+        grep "Primary_Tumor" gdc_sample_sheet.2024-09-27.tsv | awk '{print $1}' > samples/Primary_Tumor.2024-09-27.tsv
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job filter since they might be corrupted:
+samples/Primary_Tumor.2024-09-27.tsv
+[Wed Oct 23 19:29:58 2024]
+Error in rule filter:
+    jobid: 3
+    input: gdc_sample_sheet.2024-09-27.tsv
+    output: samples/Solid_Tissue_Normal.2024-09-27.tsv
+    shell:
+        
+        grep "Solid_Tissue_Normal" gdc_sample_sheet.2024-09-27.tsv | awk '{print $1}' > samples/Solid_Tissue_Normal.2024-09-27.tsv
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job filter since they might be corrupted:
+samples/Solid_Tissue_Normal.2024-09-27.tsv
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-10-23T192957.235212.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

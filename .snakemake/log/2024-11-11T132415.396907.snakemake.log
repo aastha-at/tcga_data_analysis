@@ -1,0 +1,10 @@
+host: login01
+Building DAG of jobs...
+InputFunctionException in rule filter in file /home/bec51310.iitr/workplace/project/tcga_data_analysis/test.smk, line 18:
+Error:
+  ValueError: No sample ID found for file name: Primary Tumor
+Wildcards:
+  file_name=Primary Tumor
+Traceback:
+  File "/home/bec51310.iitr/workplace/project/tcga_data_analysis/test.smk", line 24, in <lambda>
+  File "/home/bec51310.iitr/workplace/project/tcga_data_analysis/test.smk", line 12, in get_sample_id (rule filter, line 25, /home/bec51310.iitr/workplace/project/tcga_data_analysis/test.smk)

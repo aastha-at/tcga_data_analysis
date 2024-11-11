@@ -1,0 +1,9 @@
+host: login01
+Building DAG of jobs...
+InputFunctionException in rule plot in file /home/bec51310.iitr/workplace/project/tcga_data_analysis/test.smk, line 35:
+Error:
+  AttributeError: 'Wildcards' object has no attribute 'sample'
+Wildcards:
+
+Traceback:
+  File "/home/bec51310.iitr/workplace/project/tcga_data_analysis/test.smk", line 37, in <lambda> (rule plot, line 70, /home/bec51310.iitr/workplace/project/tcga_data_analysis/test.smk)

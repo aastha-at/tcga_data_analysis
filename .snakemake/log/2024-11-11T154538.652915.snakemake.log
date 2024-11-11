@@ -1,0 +1,6 @@
+host: login01
+Building DAG of jobs...
+MissingInputException in rule all in file /home/bec51310.iitr/workplace/project/tcga_data_analysis/test.smk, line 8:
+Missing input files for rule all:
+    affected files:
+        plot.png

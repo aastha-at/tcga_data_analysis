@@ -1,0 +1,55 @@
+host: login01
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 80
+Rules claiming more threads will be scaled down.
+Job stats:
+job          count
+---------  -------
+plot             1
+read_data        2
+total            3
+
+Select jobs to execute...
+Execute 2 jobs...
+
+[Mon Nov 11 17:24:21 2024]
+localrule read_data:
+    input: gene_files/solid_tissue_normal.tsv, data/gene_name.tsv
+    output: tpm_files/tpm_solid_tissue_normal.tsv
+    jobid: 3
+    reason: Missing output files: tpm_files/tpm_solid_tissue_normal.tsv; Code has changed since last execution
+    wildcards: sample=solid_tissue_normal
+    resources: tmpdir=/tmp
+
+
+[Mon Nov 11 17:24:21 2024]
+localrule read_data:
+    input: gene_files/primary_tumor.tsv, data/gene_name.tsv
+    output: tpm_files/tpm_primary_tumor.tsv
+    jobid: 1
+    reason: Missing output files: tpm_files/tpm_primary_tumor.tsv; Code has changed since last execution
+    wildcards: sample=primary_tumor
+    resources: tmpdir=/tmp
+
+[Mon Nov 11 17:24:22 2024]
+Finished job 3.
+1 of 3 steps (33%) done
+[Mon Nov 11 17:24:28 2024]
+Finished job 1.
+2 of 3 steps (67%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Nov 11 17:24:28 2024]
+localrule plot:
+    input: tpm_files/tpm_primary_tumor.tsv, tpm_files/tpm_solid_tissue_normal.tsv, scripts/Rscript.R
+    output: plot.pdf
+    jobid: 0
+    reason: Input files updated by another job: tpm_files/tpm_solid_tissue_normal.tsv, tpm_files/tpm_primary_tumor.tsv
+    resources: tmpdir=/tmp
+
+[Mon Nov 11 17:24:29 2024]
+Finished job 0.
+3 of 3 steps (100%) done
+Complete log: .snakemake/log/2024-11-11T172421.018485.snakemake.log

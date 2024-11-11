@@ -1,0 +1,8 @@
+host: login01
+Building DAG of jobs...
+MissingInputException in rule filter in file /home/bec51310.iitr/workplace/project/tcga_data_analysis/test2.smk, line 8:
+Missing input files for rule filter:
+    output: gene_list/primary_tumor.tsv
+    wildcards: sample=primary_tumor
+    affected files:
+        Primary Tumor

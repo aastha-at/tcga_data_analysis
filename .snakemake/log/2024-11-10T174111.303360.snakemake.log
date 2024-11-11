@@ -1,0 +1,4 @@
+host: login01
+Building DAG of jobs...
+CyclicGraphException in rule filter in file /home/bec51310.iitr/workplace/project/tcga_data_analysis/test.smk, line 7:
+Cyclic dependency on rule filter.

@@ -1,0 +1,14 @@
+host: login01
+Building DAG of jobs...
+AmbiguousRuleException:
+Rules filter and read_data are ambiguous for the file tpm_primary_tumor.tsv.
+Consider starting rule output with a unique prefix, constrain your wildcards, or use the ruleorder directive.
+Wildcards:
+	filter: sample=tpm_primary_tumor
+	read_data: sample=primary_tumor
+Expected input files:
+	filter: gdc_sample_sheet.tsv
+	read_data: primary_tumor.tsv
+Expected output files:
+	filter: tpm_primary_tumor.tsv
+	read_data: tpm_primary_tumor.tsv

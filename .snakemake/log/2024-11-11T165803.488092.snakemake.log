@@ -1,0 +1,8 @@
+host: login01
+Building DAG of jobs...
+MissingInputException in rule read_data in file /home/bec51310.iitr/workplace/project/tcga_data_analysis/test2.smk, line 24:
+Missing input files for rule read_data:
+    output: tpm_primary_tumor.tsv
+    wildcards: sample=primary_tumor
+    affected files:
+        data/gene_name.tsv
